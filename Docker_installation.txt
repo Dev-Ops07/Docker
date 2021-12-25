@@ -1,0 +1,64 @@
+#--------installing docker----------------------
+
+#Prerequsites
+# server
+--------------
+#installing on CentOs
+# using yum package manager
+
+#prerequsites
+---> must enable centos-extras repository by default it is in enable mode
+
+# uninstalling old version
+---> sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+# set up the repository
+
+---> sudo yum install -y yum-utils
+
+---> sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+
+# installing docker repository
+
+---> sudo yum install docker-ce docker-ce-cli containerd.io
+
+# listing the docker version
+#--->  yum list docker-ce --showduplicates | sort -r
+
+# installing specific version
+
+#---> sudo yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io
+
+# starting docker
+
+---> sudo systemctl start docker
+
+# verfying the docker 
+
+---> sudo docker run hello-world
+-----
+#step 2
+
+# installing from a downlode package .rpm file
+
+# downlode package from 
+---> https://download.docker.com/linux/centos/
+
+---> cutl -o https://download.docker.com/linux/centos/7/source/stable/Packages/docker-ce-17.03.0.ce-1.el7.centos.src.rpm
+
+---> sudo yum install /path/to/package.rpm
+
+# start docker 
+
+---> sudo systemctl start docker
+
+---> sudo docker run hello-world
+
