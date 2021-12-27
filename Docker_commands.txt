@@ -111,8 +111,51 @@
 
 ---> docker pause <cid/cname>
 
+# unpause the container
+
+---> docker unpause <cid/cname>
+
 # start the container
 
 ---> docker start <cid/cname>
+
+# run intractive mode to the terminal of container
+
+---> docker  run -it <image name> <tty/terminal>
+
+# execute commend on container 
+
+---> docker exec <cid> <commend>
+
+# execcute in intarctive mode 
+
+---> docker exec -it <cid> <tty/terminal>
+
+# inspecting the container
+
+---> docker inspect <cid/cname>
+
+# view logs of container
+
+---> docker logs <cid/cname> 
+
+# to know the logs of the container tail part
+
+---> docker logs --tail <number> <cid/cname>
+
+# toknow logs in intactive mode
+
+---> docker logs --follow --tail<number> <cid/cname>
+
+# image build from Dockefile 
+
+---> docker build -t <imagename:version> <path of Dockerfile>
+
+# to know the port 
+
+---> docker port <cid/cname>
+
+
+
 
  
