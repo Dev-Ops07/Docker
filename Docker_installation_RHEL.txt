@@ -1,0 +1,114 @@
+#-------------------installing docker----------------------
+# prerequisites
+# server
+--------------------------------------------
+#installing on -----------RHEL-----
+# installing using package manager yum
+
+# uninstalling old version
+
+--->  sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine \
+                  podman \
+                  runc
+
+# set up the reopsitory
+
+---> sudo yum install -y yum-utils
+
+---> sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/rhel/docker-ce.repo
+# installing docker engine
+
+---> sudo yum install docker-ce docker-ce-cli containerd.io
+
+# listing the docker versions
+
+#---> yum list docker-ce --showduplicates | sort -r
+
+# installing specific version
+
+#---> sudo yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io
+
+# start docker 
+
+---> sudo systemctl start docker
+
+# verify docker 
+
+---> sudo docker run hello-world
+
+# add non-root user to docker group for daemon access 
+
+---> sudo usermod -aG docker <username>
+---------------
+#method-2
+
+# installing from a downlode package .rpm file
+
+# downlode package from
+ 
+--->  https://download.docker.com/linux/rhel/ 
+
+---> cutl -o https://download.docker.com/linux/rhel/7/source/stable/Packages/docker-ce-19.03.15-3.el7.src.rpm
+
+---> sudo yum install /path/to/package.rpm
+
+# start docker 
+
+---> sudo systemctl start docker
+
+# testing docker
+
+---> sudo docker run hello-world
+
+# add non-root user to docker group for daemon access 
+
+---> sudo usermod -aG docker <username>
+
+-----
+
+#method-3
+
+# installing using conventional scripts
+
+---> curl -fsSL https://get.docker.com -o get-docker.sh
+
+---> sudo sh get-docker.sh
+
+# add non-root user to docker group for daemon access 
+
+---> sudo usermod -aG docker <username>
+
+
+#-----------------------------------------------------------EOD---------------------------------------------------------------------------
+
+#--------------------------unstallingdocker-----------------------
+
+# unstall docker using package manager 
+# in RHEL
+
+---> sudo yum remove docker-ce docker-ce-cli containerd.io
+
+# unstall images,containers,volumes and configurations
+
+---> sudo rm -rf /var/lib/docker
+
+---> sudo rm -rf /var/lib/containerd
+
+----
+
+
+
+
+
+
+
+
