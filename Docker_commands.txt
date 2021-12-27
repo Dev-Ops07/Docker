@@ -1,0 +1,118 @@
+#---------------dockercommands-----------------
+
+# to know version
+
+---> docker version
+
+# To know information
+
+---> docker info
+
+# run a container
+
+---> docker run <image name>
+
+# downlode image to local repository
+
+---> docker pull <image name>
+
+# listing the images
+
+---> docker images
+
+#or
+
+---> docker image ls
+
+# listing the running containers
+
+---> docker container ls
+
+# or
+
+---> docker ps
+
+# listing all the container even exited one also
+
+---> docker container ls -a
+
+# or
+
+---> docker ps -a
+
+# listing the runnig container ids
+
+---> docker ps -q
+
+# or 
+
+---> docker container ls -q
+
+# or
+
+# listing all containers ids
+
+---> docker container ls -aq
+
+# removing the exited containers
+
+---> docker rm <cid/name>
+
+# or
+
+# all exited containers 
+
+---> docker rm $(docker ps -aq)
+# or
+
+---> docker rm $(docker container ls -aq)
+
+# removing the running comtainers
+
+---> docker rm -f <cid/name>
+
+# removing all containers
+
+---> docker rm -f $(docker ps -aq)
+
+# or
+
+---> docker rm -f $(docker container ls -aq)
+
+# removing images
+
+---> docker rmi <imagename/id>
+
+# removing image even it is attached to container
+
+---> docker rmi -f <immagename/id>
+
+# removing all images
+
+---> docker rmi -f $(docker images -aq)
+
+# naming a container and run the container
+
+---> docker run --name <container name> <imagename>
+
+# run the container in detached mode by default it is attached
+
+---> docker run -d <image name>
+
+# attach the container to stdout 
+
+---> docker attach <cid/containername>
+
+# stop the running container
+
+---> docker stop <cid/cname>
+
+# pause the container 
+
+---> docker pause <cid/cname>
+
+# start the container
+
+---> docker start <cid/cname>
+
+ 

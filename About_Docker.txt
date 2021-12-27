@@ -6,3 +6,10 @@ libraries and configuration files; they can communicate with each other through 
 Because all of the containers share the services of a single operating system kernel, they use fewer resources than virtual machines
 
 The software that hosts the containers is called Docker Engine
+
+
+# docker installation methods 
+using package manager
+downloding package and install using package manager
+conventional script
+
